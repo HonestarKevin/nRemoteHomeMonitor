@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemoteHomeMonitor</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 通用 start -->
+    <string name="str_next">"Next"</string>
+    <string name="str_previous">"Privous"</string>
+    <string name="str_cancle">"Cancle"</string>
+    <!-- 通用 End -->
+
+
+    <!-- 设置页 welcome Start -->
+    <string name="str_welcome_setup_wizard_title">"Setup Wizard"</string>
+    <string name="str_welcome_setup_wizard_context">"This wizard can set for this application basic parameters, 
+        please click "next" to continue."</string>
+    <!-- 设置页 welcome End -->
+
+
+    <!-- 设置管理页 Start -->
+    <string name="str_admin_setup_title">"Setup Adminstrator"</string>
+    <string name="str_admin_setup_username">"Username:"</string>
+    <string name="str_admin_setup_passwd">"Passwd:"</string>
+    <string name="str_admin_setup_passwd_verify">"Passwd verify:"</string>
+    <string name="str_please_input_username">"Please input Administration name！"</string>
+    <string name="str_please_input_passwd">"Please input Administration passwd！"</string>
+    <string name="str_please_input_passwd_verify">"Please input Administration passwd again！"</string>
+    <string name="str_input_passwd_error_warning">"Warning:The two passwords you typed do not match. Try again！！！"</string>
+    <!-- 设置管理页 End -->
+
+
+    <!-- 设置终端 Start -->
+    <string name="str_telnet_setup_title">"Setup Remote Connect Telnet"</string>
+    <string name="str_telnet_setup_telnet_name">"Telnet Name:"</string>
+    <string name="str_telnet_setup_telnet_connectipn_number">"Telnet Number:"</string>
+    <string name="str_please_input_telnet_name">"Please Input Telnet Name！"</string>
+    <string name="str_please_input_telnet_connection_number">"Please Input Telnet Connection Number！"</string>
+    <!-- 设置终端 End -->
+
+
+    <!-- 设置设备 Start -->
+    <string name="str_device_setup_title">"Setup Sensor Devices"</string>
+    <string name="str_device_setup_name">"Device Name:"</string>
+    <string name="str_device_setup_number">"Devices ID:"</string>
+    <string name="str_device_add">"Add"</string>
+    <string name="str_setup_finish">"Finish"</string>
+    <string name="str_please_input_sensor_device_name">"Please Input Device Name！"</string>
+    <string name="str_please_input_sensor_devices_number">"Please Input Sendor Device serial number ID！"</string>
+    <!-- 设置设备 End -->
+
+
+    <!-- 设置用户 非管理员 Start -->
+    <string name="str_user_setup_title">"Setup User Info"</string>
+    <string name="str_user_setup_name">"Username:"</string>
+    <string name="str_user_setup_passwd">"Passwd:"</string>
+    <string name="str_user_setup_passwd_verify">"Passwd verify:"</string>
+    <string name="str_user_setup_remind_info">"Remind Info：Setup User Infomation，Administrator Info will save in remote telnet ，Common user save in the local disk！"</string>
+    <!-- 设置用户 非管理员 End -->
+
+
+    <!-- 登录页面 Start -->
+    <string name="str_remeber_passwd">"Remeber Passwd"</string>
+    <string name="str_login">"Login"</string>
+    <string name="str_user_type">"UserType:"</string>
+    <!-- 登录页面 End -->
+
+</resources>

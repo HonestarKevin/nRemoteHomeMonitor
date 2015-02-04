@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_setup_margin_top"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_admin_setup_username"
+                android:textSize="@dimen/d_welcome_setup_context"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_admin_setup_passwd"
+                android:textSize="@dimen/d_welcome_setup_context"
+                android:textStyle="bold" />
+			  
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_user_type"
+                android:textSize="@dimen/d_welcome_setup_context"
+                android:textStyle="bold" />
+                
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_setup_margin_top"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/e_login_username"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:inputType="textCapCharacters"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/e_login_passwd"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+
+             
+            <Spinner
+                android:id="@+id/e_login_spinner"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high" 
+                android:entries="@array/user_type"/>
+			
+            <CheckBox
+                android:id="@+id/ck_login_remeber"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_remeber_passwd" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/d_setup_margin_top"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/b_login"
+            android:layout_width="@dimen/d_setup_next_width"
+            android:layout_height="@dimen/d_setup_next_high"
+            android:layout_gravity="left"
+            android:layout_marginRight="@dimen/d_welcome_setup_margin_left"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:onClick="LoginButtonOnClick"
+            android:text="@string/str_login"
+            android:textSize="@dimen/d_welcome_setup_context" />
+
+        <Button
+            android:id="@+id/b_cancle_login"
+            android:layout_width="@dimen/d_setup_next_width"
+            android:layout_height="@dimen/d_setup_next_high"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/d_setup_button_margin_left"
+            android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:onClick="CancleButtonOnClick"
+            android:text="@string/str_cancle"
+            android:textSize="@dimen/d_welcome_setup_context" />
+    </LinearLayout>
+
+</LinearLayout>
