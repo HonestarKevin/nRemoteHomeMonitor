@@ -26,29 +26,10 @@ public class RootActivity extends Activity {
 	private float mTtsSpeechRate = 1.0f; // 朗读速率
 	// 所有布局的父容器
 	public FrameLayout ViewContainerFrameLayout = null;
-	private SetupWizardViewHolder  mSetupWizardViewHolder = null;
+	private SetupWizardViewHolder mSetupWizardViewHolder = null;
+	SharedPreferencesDataHelper mSharedPreferencesDataHelper = null;
 
-	/**
-	 * @Funciton: 确认是否为第一次打开些APK,如果是，就进行第一次的APK设置；
-	 * @return
-	 */
-	public boolean CheckNeedSetup() {
-		if (mWorkContext.mPreferences != null) {
-			if (DEBUG)
-				Log.e(TAG,
-						"mWorkContext.mPreferences != null + "
-								+ mWorkContext.mPreferences
-										.getBoolean(
-												mWorkContext.configNeedRunSetupWizardString,
-												true));
-			return mWorkContext.mPreferences.getBoolean(
-					mWorkContext.configNeedRunSetupWizardString, true);
-		} else {
-			if (DEBUG)
-				Log.e(TAG, "mWorkContext.mPreferences null error");
-			return true;
-		}
-	}
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +52,10 @@ public class RootActivity extends Activity {
 				mWorkContext.configFileNameString, Activity.MODE_WORLD_READABLE
 						+ Activity.MODE_WORLD_WRITEABLE);
 		ViewContainerFrameLayout = (FrameLayout) findViewById(R.id.root_container);
+		mSharedPreferencesDataHelper = new SharedPreferencesDataHelper(
+				mWorkContext);
 		// 如果是第一次打开这个APK。就提示用户设置用户名，密码。增加帐号等；
-		if (CheckNeedSetup()) {
+		if (mSharedPreferencesDataHelper.CheckNeedSetup()) {
 			ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
 					R.layout.interface_setupwizard, null));
 			LinearLayout CurrentPageLinearLayout = (LinearLayout) findViewById(R.id.l_welcom_setup);
@@ -125,7 +108,14 @@ public class RootActivity extends Activity {
 			mHandler.post(new Runnable() {
 				@Override
 				public void run() {
-					SetShowPage(R.id.l_telnet_setup, R.id.l_user_setup, false);
+					String TelnetName = mSetupWizardViewHolder.GetTelnetName();
+					String TelnetConnectionNumber = mSetupWizardViewHolder
+							.GetTelnetNumber();
+					if (mSharedPreferencesDataHelper.SetTelnetInfo(TelnetName,
+							TelnetConnectionNumber)) {
+						SetShowPage(R.id.l_telnet_setup, R.id.l_user_setup,
+								false);
+					}
 				}
 			});
 			break;
@@ -133,18 +123,33 @@ public class RootActivity extends Activity {
 			mHandler.post(new Runnable() {
 				@Override
 				public void run() {
-					SetShowPage(R.id.l_user_setup, R.id.l_devices_setup, false);
+					String Username = mSetupWizardViewHolder.GetUsername();
+					String UserPasswd = mSetupWizardViewHolder.GetUserPasswd();
+					long UserMode = mSetupWizardViewHolder.GetUserMode();
+					if (mSharedPreferencesDataHelper.SetUserMode(UserMode)
+							&& mSharedPreferencesDataHelper.SetLocalUserInfo(
+									Username, UserPasswd))
+						if(UserMode == mWorkContext.ADMIN_MODE)
+						{
+							SetShowPage(R.id.l_user_setup, R.id.l_devices_setup,
+								false);
+						}else if(UserMode == mWorkContext.COMMON_USER_MODE)
+						{
+							//进入设备信息下载页面；
+							SetShowPage(R.id.l_user_setup, R.id.l_devices_setup,
+									false);
+						}
 				}
 			});
 			break;
-//		case R.id.b_device_next:
-//			mHandler.post(new Runnable() {
-//				@Override
-//				public void run() {
-//
-//				}
-//			});
-//			break;
+		// case R.id.b_device_next:
+		// mHandler.post(new Runnable() {
+		// @Override
+		// public void run() {
+		//
+		// }
+		// });
+		// break;
 		default:
 			break;
 		}
@@ -221,62 +226,57 @@ public class RootActivity extends Activity {
 		GotoPageLinearLayout.setVisibility(View.VISIBLE);
 	}
 
+	/**
+	 * @function AddButtonOnClick
+	 * @note 设置设备面"增加"按键按下
+	 * @param v
+	 */
+	public void AddButtonOnClick(View v) {
+		if (DEBUG)
+			Log.e(TAG, "NextButtonOnClick id =" + v.getId());
+		if (v.getId() == R.id.b_device_add) {
+			// 增加设备
+			mHandler.post(new Runnable() {
+				@Override
+				public void run() {
+					 String DevicesName = mSetupWizardViewHolder.GetDevicesName();
+					 String DevicesId = mSetupWizardViewHolder.GetDevicesId();
+					 mSharedPreferencesDataHelper.AddDevice(DevicesName, DevicesId);
+				}
+			});
+		}
+
+	}
+
+	/**
+	 * @function FinishButtonOnClick
+	 * @note 设置设备面"完成"按键按下
+	 * @param v
+	 */
+	public void FinishButtonOnClick(View v) {
+		if (DEBUG)
+			Log.e(TAG, "PreviousButtonOnClick id =" + v.getId());
+		if (v.getId() == R.id.b_device_finish) {
+			// 增加设备
+			mHandler.post(new Runnable() {
+				@Override
+				public void run() {
+					 String DevicesName = mSetupWizardViewHolder.GetDevicesName();
+					 String DevicesId = mSetupWizardViewHolder.GetDevicesId();
+					 mSharedPreferencesDataHelper.AddDevice(DevicesName, DevicesId);
+
+					 SetupWizardFinish();
+				}
+			});
+		}
+	}
 	
-    /**
-     * @function AddButtonOnClick
-     * @note 设置设备面"增加"按键按下
-     * @param v
-     */
-    public void AddButtonOnClick(View v)
-    {
-        if (DEBUG)
-            Log.e(TAG, "NextButtonOnClick id =" + v.getId());
-        if (v.getId() == R.id.b_device_add)
-        {
-            // 增加设备
-            mHandler.post(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-//                    String DevicesName = GetDevicesName();
-//                    String DevicesId = GetDevicesId();
-//                    AddDeviceInfo(DevicesName, DevicesId);
-                }
-            });
-        }
-
-    }
-
-    /**
-     * @function FinishButtonOnClick
-     * @note 设置设备面"完成"按键按下
-     * @param v
-     */
-    public void FinishButtonOnClick(View v)
-    {
-        if (DEBUG)
-            Log.e(TAG, "PreviousButtonOnClick id =" + v.getId());
-        if (v.getId() == R.id.b_device_finish)
-        {
-            // 增加设备
-            mHandler.post(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-//                    String UserInfoName = GetUserInfoName();
-//                    String UserInfoPasswd = GetUserInfoPasswd();
-//                    AddUserInfo(UserInfoName, UserInfoPasswd);
-//                    editor.putBoolean(
-//                            mWorkContext.configNeedRunSetupWizardString, false);
-//                    editor.commit();
-//                    mWorkContext.mContext.startActivity(new Intent(
-//                            mWorkContext.mContext, LoginActivity.class));
-//                    finish();
-                }
-            });
-            // 跳转到登录页面
-        }
-    }
+	private void SetupWizardFinish() {
+		// TODO Auto-generated method stub
+		mSharedPreferencesDataHelper.SetupWizardOK();
+		// 跳转到登录页面
+		ViewContainerFrameLayout.removeAllViews();
+		ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
+				R.layout.interface_login, null));
+	}
 }

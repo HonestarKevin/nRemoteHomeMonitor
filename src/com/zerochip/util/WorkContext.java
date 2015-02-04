@@ -33,6 +33,9 @@ public class WorkContext
     public final static String configDevicesIdListString = "DevicesIdList";
     public final static String configUsernamesListString = "UsernamesList";
     
+    public final static String configLocalUsernameString = "LocalUsername";
+    public final static String configLocalPasswdString = "LocalPasswd";
+    public final static String configLocalUserModeString = "LocalUserMode";
     
     public final static long ADMIN_MODE = 0;
     public final static long COMMON_USER_MODE = 1;

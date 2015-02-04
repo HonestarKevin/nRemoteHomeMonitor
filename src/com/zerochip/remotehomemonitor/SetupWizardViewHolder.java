@@ -181,4 +181,42 @@ public class SetupWizardViewHolder {
         	return UserModeSelectSpinner.getSelectedItemId();
         }
     }
+    //pag 3.
+    public String GetDevicesName()
+    {
+        
+        if (DevicesNameEditText == null)
+        {
+            return null;
+        }
+        else
+            if (DevicesNameEditText.getText().toString().equals(""))
+            {
+                ShowToast(mWorkContext.mResources
+                        .getString(R.string.str_please_input_sensor_device_name));
+                return null;
+            }
+            else
+            {
+                return DevicesNameEditText.getText().toString();
+            }
+    }
+    public String GetDevicesId()
+    {
+        if (DevicesIDEditText == null)
+        {
+            return null;
+        }
+        else
+            if (DevicesIDEditText.getText().toString().equals(""))
+            {
+                ShowToast(mWorkContext.mResources
+                        .getString(R.string.str_please_input_sensor_device_number_id));
+                return null;
+            }
+            else
+            {
+                return DevicesIDEditText.getText().toString();
+            }
+    }
 }
