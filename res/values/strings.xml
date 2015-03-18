@@ -59,10 +59,34 @@
     <!-- 设置用户 非管理员 End -->
 
 
+    <!-- 下载设备信息 Start -->
+    <string name="str_device_download_setup_title">"DownLoad Sensor Device Info From Remote"</string>
+    <string name="str_admin_register_setup_name">"Admin Name:"</string>
+    <string name="str_admin_register_setup_telnumber">"Admin Phone:"</string>
+    <string name="str_please_input_admin_name">"Please input Admin Name！"</string>
+    <string name="str_please_input_admin_phone_number">"Please input admin phone number！"</string>
+    <string name="str_devices_download">"Download"</string>
+    <!-- 下载设备信息 End -->
+
+
     <!-- 登录页面 Start -->
-    <string name="str_remeber_passwd">"Remeber Passwd"</string>
+    <string name="str_remember_passwd">"Remember Passwd"</string>
     <string name="str_login">"Login"</string>
     <string name="str_user_type">"UserType:"</string>
+    <string name="str_username_or_passwd_error">"Username or Passwd input error,Please input again!"</string>
     <!-- 登录页面 End -->
+
+
+    <!-- 主页面 Start -->
+    <string name="str_main_exit">"Exit"</string>
+    <string name="str_main_warning_id">"Warning ID:"</string>
+    <string name="str_main_safety_status">"Safety Status:"</string>
+    <string name="str_main_safety">"Safety"</string>
+    <string name="str_main_invade">"invade"</string>
+    <string name="str_main_call">"Call"</string>
+    <string name="str_main_setting">"Settings"</string>
+    <string name="str_main_history">"Histories"</string>
+    <string name="str_main_none">"None"</string>
+    <!-- 主页面 End -->
 
 </resources>

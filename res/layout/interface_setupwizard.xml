@@ -8,4 +8,5 @@
     <include layout="@layout/setup_local_user_info"/>
     <include layout="@layout/setup_telnet_info"/>
     <include layout="@layout/setup_devices_info"/>
+    <include layout="@layout/setup_devices_download"/>
 </LinearLayout>

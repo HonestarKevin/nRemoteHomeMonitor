@@ -28,7 +28,7 @@ public class RootActivity extends Activity {
 	public FrameLayout ViewContainerFrameLayout = null;
 	private SetupWizardViewHolder mSetupWizardViewHolder = null;
 	SharedPreferencesDataHelper mSharedPreferencesDataHelper = null;
-
+	private LoginInterfaceViewHolder mLoginInterfaceViewHolder = null;
 
 
 	@Override
@@ -38,7 +38,7 @@ public class RootActivity extends Activity {
 
 		RootLayoutInflater = LayoutInflater.from(this);
 		mWorkContext = new WorkContext();
-		mWorkContext.mContext = this;
+		mWorkContext.mContext = this.getApplicationContext();
 		mWorkContext.mActivity = this;
 		// TODO Auto-generated method stub
 		mWorkContext.mHandler = mHandler;
@@ -54,18 +54,14 @@ public class RootActivity extends Activity {
 		ViewContainerFrameLayout = (FrameLayout) findViewById(R.id.root_container);
 		mSharedPreferencesDataHelper = new SharedPreferencesDataHelper(
 				mWorkContext);
+		mWorkContext.mSharedPreferencesDataHelper = mSharedPreferencesDataHelper;
 		// 如果是第一次打开这个APK。就提示用户设置用户名，密码。增加帐号等；
 		if (mSharedPreferencesDataHelper.CheckNeedSetup()) {
-			ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
-					R.layout.interface_setupwizard, null));
-			LinearLayout CurrentPageLinearLayout = (LinearLayout) findViewById(R.id.l_welcom_setup);
-			CurrentPageLinearLayout
-					.setVisibility(CurrentPageLinearLayout.VISIBLE);
-			mSetupWizardViewHolder = new SetupWizardViewHolder(mWorkContext);
+			// 跳转到设置向导页面
+			GotoSetupWizardInterface();
 		} else {
-			ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
-					R.layout.interface_login, null));
-
+			// 跳转到登录页面
+			GotoLoginInterface();
 		}
 	}
 
@@ -109,6 +105,8 @@ public class RootActivity extends Activity {
 				@Override
 				public void run() {
 					String TelnetName = mSetupWizardViewHolder.GetTelnetName();
+					if(TelnetName == null)
+						return;
 					String TelnetConnectionNumber = mSetupWizardViewHolder
 							.GetTelnetNumber();
 					if (mSharedPreferencesDataHelper.SetTelnetInfo(TelnetName,
@@ -124,6 +122,8 @@ public class RootActivity extends Activity {
 				@Override
 				public void run() {
 					String Username = mSetupWizardViewHolder.GetUsername();
+					if(Username == null)
+						return;
 					String UserPasswd = mSetupWizardViewHolder.GetUserPasswd();
 					long UserMode = mSetupWizardViewHolder.GetUserMode();
 					if (mSharedPreferencesDataHelper.SetUserMode(UserMode)
@@ -136,7 +136,7 @@ public class RootActivity extends Activity {
 						}else if(UserMode == mWorkContext.COMMON_USER_MODE)
 						{
 							//进入设备信息下载页面；
-							SetShowPage(R.id.l_user_setup, R.id.l_devices_setup,
+							SetShowPage(R.id.l_user_setup, R.id.l_devices_download_setup,
 									false);
 						}
 				}
@@ -233,13 +233,15 @@ public class RootActivity extends Activity {
 	 */
 	public void AddButtonOnClick(View v) {
 		if (DEBUG)
-			Log.e(TAG, "NextButtonOnClick id =" + v.getId());
+			Log.e(TAG, "AddButtonOnClick id =" + v.getId());
 		if (v.getId() == R.id.b_device_add) {
 			// 增加设备
 			mHandler.post(new Runnable() {
 				@Override
 				public void run() {
 					 String DevicesName = mSetupWizardViewHolder.GetDevicesName();
+					 if(DevicesName == null)
+							return;
 					 String DevicesId = mSetupWizardViewHolder.GetDevicesId();
 					 mSharedPreferencesDataHelper.AddDevice(DevicesName, DevicesId);
 				}
@@ -247,25 +249,67 @@ public class RootActivity extends Activity {
 		}
 
 	}
-
 	/**
-	 * @function FinishButtonOnClick
-	 * @note 设置设备面"完成"按键按下
+	 * @function DownloadButtonOnClick
+	 * @note "下载"按键按下
 	 * @param v
 	 */
-	public void FinishButtonOnClick(View v) {
+	public void DownloadButtonOnClick(View v) {
 		if (DEBUG)
-			Log.e(TAG, "PreviousButtonOnClick id =" + v.getId());
-		if (v.getId() == R.id.b_device_finish) {
+			Log.e(TAG, "DownloadButtonOnClick id =" + v.getId());
+		if (v.getId() == R.id.b_device_download) {
 			// 增加设备
 			mHandler.post(new Runnable() {
 				@Override
 				public void run() {
-					 String DevicesName = mSetupWizardViewHolder.GetDevicesName();
-					 String DevicesId = mSetupWizardViewHolder.GetDevicesId();
-					 mSharedPreferencesDataHelper.AddDevice(DevicesName, DevicesId);
+					 String AdminUsername = mSetupWizardViewHolder.GetAdminUsername();
+					 if(AdminUsername == null)
+							return;
+					 String AdminPhoneNumber = mSetupWizardViewHolder.GetAdminPhoneNumber();
+					 //save admin info into local SharedPreferences
+					 if(mSharedPreferencesDataHelper.SetRemoteAdminInfo(AdminUsername, AdminPhoneNumber))
+					 {
+						 
+						 //发送信息，下载devices Info;
+					 }
+				}
+			});
+		}
 
-					 SetupWizardFinish();
+	}
+	/**
+	 * @function FinishButtonOnClick
+	 * @note "完成"按键按下
+	 * @param v
+	 */
+	public void FinishButtonOnClick(View v) {
+		if (DEBUG)
+			Log.e(TAG, "FinishButtonOnClick id =" + v.getId());
+		if (v.getId() == R.id.b_device_finish) {
+			// 增加设备完成
+			mHandler.post(new Runnable() {
+				@Override
+				public void run() {
+					 String DevicesName = mSetupWizardViewHolder.GetDevicesName();
+					 if(DevicesName == null)
+							return;
+					 String DevicesId = mSetupWizardViewHolder.GetDevicesId();
+					 if(mSharedPreferencesDataHelper.AddDevice(DevicesName, DevicesId))
+						 SetupWizardFinish();
+				}
+			});
+		}else if(v.getId() == R.id.b_device_download_finish)
+		{
+			mHandler.post(new Runnable() {
+				@Override
+				public void run() {
+					 String AdminUsername = mSetupWizardViewHolder.GetAdminUsername();
+					 if(AdminUsername == null)
+							return;
+					 String AdminPhoneNumber = mSetupWizardViewHolder.GetAdminPhoneNumber();
+					 //save admin info into local SharedPreferences
+					 if(mSharedPreferencesDataHelper.SetRemoteAdminInfo(AdminUsername, AdminPhoneNumber))
+						 SetupWizardFinish();
 				}
 			});
 		}
@@ -275,8 +319,38 @@ public class RootActivity extends Activity {
 		// TODO Auto-generated method stub
 		mSharedPreferencesDataHelper.SetupWizardOK();
 		// 跳转到登录页面
+		GotoLoginInterface();
+	}
+	/**
+	 * @Function: 调转到设置向导界面
+	 */
+	public void GotoSetupWizardInterface()
+	{
+		ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
+				R.layout.interface_setupwizard, null));
+		LinearLayout CurrentPageLinearLayout = (LinearLayout) findViewById(R.id.l_welcom_setup);
+		CurrentPageLinearLayout
+				.setVisibility(CurrentPageLinearLayout.VISIBLE);
+		mSetupWizardViewHolder = new SetupWizardViewHolder(mWorkContext);
+	}
+	/**
+	 * @Function: 调转到登录界面
+	 */
+	public void GotoLoginInterface()
+	{
 		ViewContainerFrameLayout.removeAllViews();
 		ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
 				R.layout.interface_login, null));
+		mLoginInterfaceViewHolder = new LoginInterfaceViewHolder(mWorkContext);
+	}
+	/**
+	 * @Function: 调转到主界面
+	 */
+	public void GotoMainInterface()
+	{
+		ViewContainerFrameLayout.removeAllViews();
+		ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
+				R.layout.interface_main, null));
+
 	}
 }

@@ -38,6 +38,13 @@ public class SetupWizardViewHolder {
 	//设备ID
 	private EditText	DevicesIDEditText = null;
 	
+	
+	//感应设备下载页面  pag 3
+	//设备名称
+	private EditText	AdminUsernameEditText  = null;
+	//设备ID
+	private EditText	AdminPhoneNumberEditText = null;
+	
 	public SetupWizardViewHolder(WorkContext mWorkContext) {
 		super();
 		this.mWorkContext = mWorkContext;
@@ -61,6 +68,10 @@ public class SetupWizardViewHolder {
 		//pag3.
 		DevicesNameEditText = (EditText) mWorkContext.mActivity.findViewById(R.id.e_setup_device_name);
 		DevicesIDEditText = (EditText) mWorkContext.mActivity.findViewById(R.id.e_setup_device_number);
+		
+		//pag4 
+		AdminUsernameEditText = (EditText) mWorkContext.mActivity.findViewById(R.id.e_setup_download_admin_name);
+		AdminPhoneNumberEditText = (EditText) mWorkContext.mActivity.findViewById(R.id.e_setup_download_admin_phone);
 	}
 	
 	/**
@@ -174,7 +185,7 @@ public class SetupWizardViewHolder {
     {
         if (UserModeSelectSpinner == null)
         {
-            return -1;
+            return  mWorkContext.UNKNOW_MODE;
         }else
         {
         	if(DEBUG) Log.e(TAG, "GetUserMode getSelectedItemId ="+UserModeSelectSpinner.getSelectedItemId());
@@ -217,6 +228,43 @@ public class SetupWizardViewHolder {
             else
             {
                 return DevicesIDEditText.getText().toString();
+            }
+    }
+    //pag 4
+    public String GetAdminUsername()
+    {
+    	if(AdminUsernameEditText == null)
+    	{
+    		return null;
+    	}
+    	else 
+            if (AdminUsernameEditText.getText().toString().equals(""))
+            {
+                ShowToast(mWorkContext.mResources
+                        .getString(R.string.str_please_input_admin_name));
+                return null;
+            }
+            else
+            {
+                return AdminUsernameEditText.getText().toString();
+            }
+    }
+    public String GetAdminPhoneNumber()
+    {
+    	if(AdminPhoneNumberEditText == null)
+    	{
+    		return null;
+    	}
+    	else 
+            if (AdminPhoneNumberEditText.getText().toString().equals(""))
+            {
+                ShowToast(mWorkContext.mResources
+                        .getString(R.string.str_please_input_admin_phone_number));
+                return null;
+            }
+            else
+            {
+                return AdminPhoneNumberEditText.getText().toString();
             }
     }
 }

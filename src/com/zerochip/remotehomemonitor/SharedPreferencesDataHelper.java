@@ -33,7 +33,14 @@ public class SharedPreferencesDataHelper {
 	private String LocalUserNameString = null;
 	private String LocalUserPasswdString = null;
 	private String LocalUserModeString = null;
+	
+	/**
+	 * Remote Admin Info
+	 */
+	private String RemoteAdminUsernameString = null;
+	private String RemoteAdminPhoneNumberString = null;
 
+	
 	/**
 	 * 
 	 * @param mWorkContext
@@ -158,31 +165,40 @@ public class SharedPreferencesDataHelper {
         Log.e(TAG, "\n------------------dump End------------------------------\n");
     }
 	/** -----------------------SharedPreference operator Start --------------- **/
-	private String SharedPreferencesGetString(String keyString) {
+	public String SharedPreferencesGetString(String keyString) {
 		return mSharedPreferences.getString(keyString, null);
 	}
 
-	private void SharedPreferencesSetString(String keyString, String value) {
+	public void SharedPreferencesSetString(String keyString, String value) {
 		mSharedPreferencesEditor.putString(keyString, value);
 		mSharedPreferencesEditor.commit();
 	}
 
-	private void SharedPreferencesSetStringSet(String keyString,
+	public void SharedPreferencesSetStringSet(String keyString,
 			HashSet<String> value) {
 		mSharedPreferencesEditor.putStringSet(keyString, value);
 		mSharedPreferencesEditor.commit();
 	}
 
-	private HashSet<String> SharedPreferencesGetStringSet(String keyString) {
+	public HashSet<String> SharedPreferencesGetStringSet(String keyString) {
 		return (HashSet<String>) mSharedPreferences.getStringSet(keyString,
 				null);
 	}
 
-	private void SharedPreferencesRemoveMember(String keyString) {
+	public void SharedPreferencesRemoveMember(String keyString) {
 		mSharedPreferencesEditor.remove(keyString);
 		mSharedPreferencesEditor.commit();
 	}
-
+	public void SharedPreferencesSetBoolean(String keyString, boolean value)
+	{
+		mSharedPreferencesEditor.putBoolean(keyString, value);
+		mSharedPreferencesEditor.commit();
+	}
+	public boolean SharedPreferencesGetBoolean(String keyString)
+	{
+		return mSharedPreferences.getBoolean(keyString,
+				false);
+	}
 	/** -----------------------SharedPreference operator End --------------- **/
 
 	/** 终端信息Start-----> */
@@ -404,17 +420,21 @@ public class SharedPreferencesDataHelper {
 	 * @Function 增加设备
 	 * @param DeviceName
 	 * @param DeviceId
-	 * @return true 增加设备成功 fase 增加设备失败
+	 * @return true 增加设备成功 false 增加设备失败
 	 */
 	public boolean AddDevice(String DeviceName, String DeviceId) {
 		if (DeviceName == null || DeviceId == null) {
 			Log.e(TAG, "AddDevice  DeviceName = " + DeviceName + "DeviceId = "
 					+ DeviceId);
 			return false;
-		} else if (DevicesList.contains(DeviceId)) {
+		} else if (DevicesList != null && DevicesList.contains(DeviceId)) {
 			Log.e(TAG, " AddDevice DeviceId " + DeviceId + "have exist");
 			return false;
 		} else {
+			if(DevicesInfo == null)
+				DevicesInfo = new HashMap<String, String>();
+			if(DevicesList == null)
+				DevicesList = new HashSet<String>();
 			DevicesInfo.put(DeviceId, DeviceName);
 			SharedPreferencesSetString(DeviceId, DeviceName);
 			DevicesList.add(DeviceId);
@@ -485,6 +505,7 @@ public class SharedPreferencesDataHelper {
 			return false;
 		}else
 		{
+			LocalUserModeString = String.valueOf(UserMode);
 			SharedPreferencesSetString(mWorkContext.configLocalUserModeString, String.valueOf(UserMode));
 			return true;
 		}
@@ -600,10 +621,10 @@ public class SharedPreferencesDataHelper {
 			return false;
 		} else {
 			SharedPreferencesSetString(mWorkContext.configLocalUsernameString,
-					LocalUserNameString);
-			LocalUserPasswdString = UserPasswd;
+					Username);		
 			SharedPreferencesSetString(mWorkContext.configLocalPasswdString,
-					LocalUserPasswdString);
+					UserPasswd);
+			LocalUserPasswdString = UserPasswd;
 			LocalUserNameString = Username;
 			return true;
 		}
@@ -611,4 +632,139 @@ public class SharedPreferencesDataHelper {
 
 	/** <----- 本地用户信息End */
 
+	/**远程管理信息员信息Start-----> */
+	/**
+	 * @Function 设置远程管理信息员用户名
+	 * @param AdminUsername
+	 */
+	public void SetRemoteAdminPhoneNumber(String AdminPhoneNumber) {
+		if (AdminPhoneNumber == null) {
+			Log.e(TAG, "SetRemoteAdminPhoneNumber  AdminPhoneNumber = " + AdminPhoneNumber);
+		} else {
+			RemoteAdminPhoneNumberString = AdminPhoneNumber;
+			SharedPreferencesSetString(mWorkContext.configRemoteAdminPhoneNumberString,
+					AdminPhoneNumber);
+		}
+	}
+
+	/**
+	 * @Function 获取远程管理信息员用户名
+	 * @return 获取远程管理信息员用户名
+	 */
+	public String GetRemoteAdminPhoneNumber() {
+		return RemoteAdminPhoneNumberString;
+	}
+	/**
+	 * @Function 设置远程管理信息员用户名
+	 * @param AdminUsername
+	 */
+	public void SetRemoteAdminName(String AdminUsername) {
+		if (AdminUsername == null) {
+			Log.e(TAG, "SetRemoteAdminName  AdminUsername = " + AdminUsername);
+		} else {
+			RemoteAdminUsernameString = AdminUsername;
+			SharedPreferencesSetString(mWorkContext.configRemoteAdminUsernameString,
+					AdminUsername);
+		}
+	}
+
+	/**
+	 * @Function 获取远程管理信息员用户名
+	 * @return 获取远程管理信息员用户名
+	 */
+	public String GetRemoteAdminName() {
+		return RemoteAdminUsernameString;
+	}
+	/**
+	 * @Function 获取本地用户信息
+	 * @return 本地用户信息
+	 */
+	public HashMap<String, String> GetRemoteAdminInfo() {
+		HashMap<String, String> RemoteAdminInfoHashMap = new HashMap<String, String>();
+		RemoteAdminInfoHashMap.put(RemoteAdminUsernameString, RemoteAdminUsernameString);
+		return RemoteAdminInfoHashMap;
+	}
+	/**
+	 * @Function 设置远程管理信息员信息
+	 * @param Username
+	 * @param UserPasswd
+	 * @return
+	 */
+	public boolean SetRemoteAdminInfo(String AdminUsername, String AdminPhoneNumber) {
+		if (AdminUsername == null || AdminPhoneNumber == null) {
+			Log.e(TAG, "SetRemoteAdminInfo + AdminUsername = " + AdminUsername
+					+ " AdminPhoneNumber = " + AdminPhoneNumber);
+			return false;
+		} else {
+			SharedPreferencesSetString(mWorkContext.configRemoteAdminUsernameString,
+					AdminUsername);
+			SharedPreferencesSetString(mWorkContext.configRemoteAdminPhoneNumberString,
+					AdminPhoneNumber);
+			RemoteAdminUsernameString = AdminUsername;
+			RemoteAdminPhoneNumberString = AdminPhoneNumber;
+			return true;
+		}
+	}
+	/** <----- 远程管理员信息End */
+	
+	/**登录页面Start-----> */
+	/**
+	 * @Function: 记录用户输入的密码
+	 * @param UserInputPasswd
+	 */
+	public void SetRememberPasswd(String UserInputPasswd) 
+	{
+		SharedPreferencesSetString(mWorkContext.LoginUserInputUserPasswd, UserInputPasswd);
+	}
+	/**
+	 * @Function: 获取记录的用户密码；
+	 * @return 用户记录的密码
+	 */
+	public String GetRememberPasswd()
+	{
+		if(GetRememberPasswdStatus())
+		{
+			return SharedPreferencesGetString(mWorkContext.LoginUserInputUserPasswd);
+		}else{
+			return null;
+		}
+	}
+	public void RemoveRememberPasswd()
+	{
+		SharedPreferencesRemoveMember(mWorkContext.LoginUserInputUserPasswd);
+	}
+	/**
+	 * @Funciton: 获取当前是否为记录用户名和密码的状态
+	 * @return 记录标志 true：记录，false:不记录	
+	 */
+	public boolean GetRememberPasswdStatus()
+	{
+		return SharedPreferencesGetBoolean(mWorkContext.LoginUserRememberPasswd);
+	}
+	/**
+	 * @Funciton: 设置当前是否为记录用户名和密码的状态
+	 */
+	public void SetRememberPasswdStatus(boolean LoginUserRememberPasswd)
+	{
+		SharedPreferencesSetBoolean(mWorkContext.LoginUserRememberPasswd, LoginUserRememberPasswd);
+	}
+
+	/**
+	 * @Function: 记录的用户名；
+	 * @param UserInputUserName
+	 */
+	public void SetRememberUserName(String UserInputUserName)
+	{
+		SharedPreferencesSetString(mWorkContext.LoginUserInputUserName, UserInputUserName);
+	}
+	
+	/**
+	 * @Function: 获取记录的用户名；
+	 * @return 记录的用户名
+	 */
+	public String GetRememberUserName()
+	{
+		return SharedPreferencesGetString(mWorkContext.LoginUserInputUserName);
+	}
+	/** <----- 登录页面End */
 }

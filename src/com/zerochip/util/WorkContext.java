@@ -1,5 +1,7 @@
 package com.zerochip.util;
 
+import com.zerochip.remotehomemonitor.SharedPreferencesDataHelper;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,8 +24,8 @@ public class WorkContext
     public SimpleTextToSpeech mSimpleTextToSpeech = null;
     public SharedPreferences mPreferences = null;
     public AnimationFactory mAnimationFactory = null;
-    
-    
+    public SharedPreferencesDataHelper mSharedPreferencesDataHelper = null;
+    //setup wizard 
     public final static String configNeedRunSetupWizardString = "NeedRunSetupWizard";
     public final static String configFileNameString = "RemoteHomeMonitor";
     public final static String configAdminUsernameString = "AdminUsername";
@@ -37,6 +39,15 @@ public class WorkContext
     public final static String configLocalPasswdString = "LocalPasswd";
     public final static String configLocalUserModeString = "LocalUserMode";
     
+    public final static String configRemoteAdminUsernameString = "RemoteAdminUsername";
+    public final static String configRemoteAdminPhoneNumberString = "RemoteAdminPhoneNumber";
+    
     public final static long ADMIN_MODE = 0;
     public final static long COMMON_USER_MODE = 1;
+    public final static long UNKNOW_MODE = -1;
+    
+    //Login 
+    public final static String LoginUserRememberPasswd = "LoginUserRememberPasswd";
+    public final static String LoginUserInputUserName = "LoginUserInputUserName";
+    public final static String LoginUserInputUserPasswd = "LoginUserInputUserPasswd";
 }

@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 用户设备信息下载页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:id="@+id/l_devices_download_setup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     android:gravity="center_vertical"
-    android:background="@drawable/home_bk" 
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:visibility="gone" >
+
+    <TextView
+        style="@android:style/TextAppearance.WindowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
+        android:text="@string/str_device_setup_title"
+        android:textSize="@dimen/d_welcome_setup_title"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -27,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_admin_setup_username"
+                android:text="@string/str_admin_register_setup_name"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
@@ -35,18 +47,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_admin_register_setup_telnumber"
                 android:textColor="@android:color/white"
-                android:text="@string/str_admin_setup_passwd"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
-			<!--   
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_user_type"
-                android:textSize="@dimen/d_welcome_setup_context"
-                android:textStyle="bold" />
-            -->    
         </LinearLayout>
 
         <LinearLayout
@@ -56,31 +60,18 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/e_login_username"
+                android:id="@+id/e_setup_download_admin_name"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
                 android:inputType="textCapCharacters"
                 android:singleLine="true" />
 
             <EditText
-                android:id="@+id/e_login_passwd"
+                android:id="@+id/e_setup_download_admin_phone"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:singleLine="true" />
-
-            <!-- 
-            <Spinner
-                android:id="@+id/sp_login_spinner"
-                android:layout_width="@dimen/d_setup_edit_width"
-                android:layout_height="@dimen/d_setup_edit_high" 
-                android:entries="@array/user_type"/>
-			--> 
-            <CheckBox
-                android:id="@+id/ck_login_remember"
-                android:layout_width="@dimen/d_setup_edit_width"
-                android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_remember_passwd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -98,26 +89,28 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/b_login_login"
+            android:id="@+id/b_device_download"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="left"
-            android:layout_marginRight="@dimen/d_welcome_setup_margin_left"
+            android:layout_marginLeft="@dimen/d_setup_button_three_margin_left"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:text="@string/str_login"
+            android:onClick="DownloadButtonOnClick"
+            android:text="@string/str_devices_download"
             android:textSize="@dimen/d_welcome_setup_context" />
 
         <Button
-            android:id="@+id/b_login_cancel"
+            android:id="@+id/b_device_download_finish"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="right"
-            android:layout_marginLeft="@dimen/d_setup_button_margin_left"
+            android:layout_marginLeft="@dimen/d_setup_button_three_margin_left"
             android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:text="@string/str_cancle"
+            android:onClick="FinishButtonOnClick"
+            android:text="@string/str_setup_finish"
             android:textSize="@dimen/d_welcome_setup_context" />
     </LinearLayout>
 

@@ -15,7 +15,7 @@
 	<!-- 欢迎页面 End -->
 	<!-- 通用 start -->	
 	<dimen name="d_setup_next_high">30dp</dimen>
-	<dimen name="d_setup_next_width">80dp</dimen>
+	<dimen name="d_setup_next_width">100dp</dimen>
 	<dimen name="d_setup_margin_top">20dp</dimen>
 	<dimen name="d_setup_margin_left">10dp</dimen>
 	<dimen name="d_setup_margin_right">10dp</dimen>
@@ -23,6 +23,9 @@
 	<dimen name="d_setup_edit_high">40dp</dimen>
 	<dimen name="d_setup_button_margin_left">100dp</dimen>
 	<dimen name="d_setup_button_three_margin_left">30dp</dimen>
+	<dimen name="d_main_button_margin">5dp</dimen>
+	<dimen name="d_main_exit_button_width">50dp</dimen>
+	<dimen name="d_main_exit_button_height">50dp</dimen>
 	<!-- 通用 End -->
 	
 	

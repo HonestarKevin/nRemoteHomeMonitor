@@ -16,6 +16,7 @@
         <activity
             android:name="com.zerochip.remotehomemonitor.RootActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

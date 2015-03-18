@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 设置远程终端页面 -->
+<!-- 管理员设置设备页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/l_devices_setup"
     android:layout_width="match_parent"
