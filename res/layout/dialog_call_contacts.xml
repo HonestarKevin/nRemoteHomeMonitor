@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/blue_4_4_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@android:style/TextAppearance.WindowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/str_call_title"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/d_welcome_setup_context" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/horizontal_line" />
+
+    <ListView
+        android:id="@+id/lt_call_contacts_dialog"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:listSelector="@drawable/list_item_select_background"
+        android:layout_gravity="center" >
+    </ListView>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/horizontal_line" />
+
+</LinearLayout>

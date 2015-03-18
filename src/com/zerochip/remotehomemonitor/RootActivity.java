@@ -29,6 +29,7 @@ public class RootActivity extends Activity {
 	private SetupWizardViewHolder mSetupWizardViewHolder = null;
 	SharedPreferencesDataHelper mSharedPreferencesDataHelper = null;
 	private LoginInterfaceViewHolder mLoginInterfaceViewHolder = null;
+	private MainInterfaceViewHolder mMainInterfaceViewHolder = null;
 
 
 	@Override
@@ -351,6 +352,6 @@ public class RootActivity extends Activity {
 		ViewContainerFrameLayout.removeAllViews();
 		ViewContainerFrameLayout.addView(RootLayoutInflater.inflate(
 				R.layout.interface_main, null));
-
+		mMainInterfaceViewHolder = new MainInterfaceViewHolder(mWorkContext);
 	}
 }

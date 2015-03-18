@@ -22,7 +22,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/line" />
+        android:background="@drawable/horizontal_line" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/line" />
+        android:background="@drawable/horizontal_line" />
 
     <Button
         android:id="@+id/b_welcome_next"

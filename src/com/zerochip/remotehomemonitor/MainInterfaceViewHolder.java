@@ -1,5 +1,6 @@
 package com.zerochip.remotehomemonitor;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -7,6 +8,11 @@ import android.widget.TextView;
 
 import com.zerochip.util.WorkContext;
 
+/**
+ * @Function: 主界面
+ * @author xu
+ *
+ */
 public class MainInterfaceViewHolder {
 	public static final boolean DEBUG = RootActivity.DEBUG;
 	private static final String TAG = "com.zerochip.remotehomemonitor.MainInterfaceViewHolder";
@@ -72,7 +78,9 @@ public class MainInterfaceViewHolder {
 		UsernameTextView = (TextView) mWorkContext.mActivity
 				.findViewById(R.id.tx_main_username);
 	}
-
+	/**
+	 * @function 安全状态被按下；
+	 */
 	Runnable SafetyStatusButtonClickRunnable = new Runnable() {
 
 		@Override
@@ -80,13 +88,20 @@ public class MainInterfaceViewHolder {
 			
 		}
 	};
+	/**
+	 * @function: 呼叫按键
+	 */
 	Runnable CallButtonClickRunnable = new Runnable() {
 
 		@Override
 		public void run() {
 			//Show Dialog and on click goto call interface
+			new CallDialogInterface(mWorkContext.mContext, R.style.CallDialogInterface, mWorkContext, mWorkContext.mActivity).show();
 		}
 	};
+	/**
+	 * @function :设置页面
+	 */
 	Runnable SettingsButtonClickRunnable = new Runnable() {
 
 		@Override
@@ -94,6 +109,9 @@ public class MainInterfaceViewHolder {
 			//goto Settings Interface
 		}
 	};
+	/**
+	 * @function ：历史页面
+	 */
 	Runnable HistoriesButtonClickRunnable = new Runnable() {
 
 		@Override
@@ -108,6 +126,7 @@ public class MainInterfaceViewHolder {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.bt_main_exit:
+				if(DEBUG)Log.e(TAG, "bt_main_exit");
 				System.exit(0);
 				break;
 			case R.id.bt_main_safety_staus:
@@ -127,7 +146,9 @@ public class MainInterfaceViewHolder {
 			}
 		}
 	};
-
+	/**
+	 * @function: 给view 增加监听事件
+	 */
 	private void SetViewListener() {
 		WarningImageButton.setOnClickListener(OnClickListener);
 		SafetyStatuButton.setOnClickListener(OnClickListener);
@@ -135,7 +156,9 @@ public class MainInterfaceViewHolder {
 		SettingsButton.setOnClickListener(OnClickListener);
 		HistoriesButton.setOnClickListener(OnClickListener);
 	}
-
+	/**
+	 * @function: 给有需要的View增加数据
+	 */
 	private void SetInitViewData() {
 		WarningIDTextView.setText(mWorkContext.mResources
 				.getString(R.string.str_main_warning_id)

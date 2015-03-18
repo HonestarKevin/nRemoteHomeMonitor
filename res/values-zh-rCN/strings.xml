@@ -87,5 +87,12 @@
     <string name="str_main_history">"历史"</string>
     <string name="str_main_none">"无"</string>
     <!-- 主页面 End -->
+    
+    <!-- 呼叫dialog Start -->
+    <string name="str_call_title">"联系人列表"</string>
+    <string name="str_call_110">"拨打110"</string>
+    <string name="str_call_contacts">"联系人："</string>
+    <!--  呼叫dialog  End -->
+    
 
 </resources>
