@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/blue_4_4_bg"
+    android:gravity="fill_vertical"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/horizontal_line" />
+
+    <TextView
+        style="@android:style/TextAppearance.WindowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:text="@string/str_settings_title"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/d_welcome_setup_context" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/bk_focus"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@android:style/TextAppearance.WindowTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@android:color/holo_blue_light"
+            android:text="@string/str_settings_sound"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/ll_other_go_home_tone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@android:style/TextAppearance.WindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:text="@string/str_settings_sound"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="right" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/right"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:background="@drawable/horizontal_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_other_away_home_tone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@android:style/TextAppearance.WindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:text="@string/str_settings_sound"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="right" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/right"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:background="@drawable/horizontal_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_other_warning_tone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@android:style/TextAppearance.WindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:text="@string/str_settings_sound"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="right" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/right"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:background="@drawable/horizontal_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_other_warning_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@android:style/TextAppearance.WindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:text="@string/str_settings_sound"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="right" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/right"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:background="@drawable/horizontal_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_myself_go_home"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@android:style/TextAppearance.WindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:text="@string/str_settings_sound"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="right" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/right"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:background="@drawable/horizontal_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_myself_away_home"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@android:style/TextAppearance.WindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:text="@string/str_settings_sound"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="right" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/right"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/bk_focus"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@android:style/TextAppearance.WindowTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@android:color/holo_blue_light"
+            android:text="@string/str_settings_devices"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/horizontal_line" />
+
+</LinearLayout>

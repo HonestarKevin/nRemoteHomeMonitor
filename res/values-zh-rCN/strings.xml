@@ -94,5 +94,20 @@
     <string name="str_call_contacts">"联系人："</string>
     <!--  呼叫dialog  End -->
     
-
+	<!-- 历史查看dialog Start -->
+    <string name="str_histories_title">"查看历史"</string>
+    <string name="str_histories_warning_index">"序号"</string>
+    <string name="str_histories_warning_time">"时间"</string>
+    <string name="str_histories_warning_id">"报警ID"</string>
+    <string name="str_histories_warning_name">"名称"</string>
+    <string name="str_histories_warning_context">"内容"</string>
+    <!--  历史查看dialog  End -->
+    
+    <!-- 设置 dialog Start -->
+    <string name="str_settings_title">"设置"</string>
+    <string name="str_settings_sound">"提示音设置"</string>
+    <string name="str_settings_devices">"感应设备设置"</string>
+    <string name="str_settings_add_device">"增加设备"</string>
+    <string name="str_settings_del_device">"删除设备"</string>
+    <!-- 设置 dialog End -->
 </resources>

@@ -30,7 +30,7 @@ public class RootActivity extends Activity {
 	SharedPreferencesDataHelper mSharedPreferencesDataHelper = null;
 	private LoginInterfaceViewHolder mLoginInterfaceViewHolder = null;
 	private MainInterfaceViewHolder mMainInterfaceViewHolder = null;
-
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,7 @@ public class RootActivity extends Activity {
 		mSharedPreferencesDataHelper = new SharedPreferencesDataHelper(
 				mWorkContext);
 		mWorkContext.mSharedPreferencesDataHelper = mSharedPreferencesDataHelper;
+		mWorkContext.mDatabaseOperater = new DatabaseOperater(mWorkContext);
 		// 如果是第一次打开这个APK。就提示用户设置用户名，密码。增加帐号等；
 		if (mSharedPreferencesDataHelper.CheckNeedSetup()) {
 			// 跳转到设置向导页面

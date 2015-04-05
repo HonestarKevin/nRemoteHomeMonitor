@@ -88,5 +88,26 @@
     <string name="str_main_history">"Histories"</string>
     <string name="str_main_none">"None"</string>
     <!-- 主页面 End -->
-
+    <!-- 呼叫dialog Start -->
+    <string name="str_call_title">"Contacts List"</string>
+    <string name="str_call_110">"Call 110"</string>
+    <string name="str_call_contacts">"Contacts："</string>
+    <!-- 呼叫dialog  End -->
+    
+	<!-- 历史查看dialog Start -->
+    <string name="str_histories_title">"Histories"</string>
+    <string name="str_histories_warning_index">"Index"</string>
+    <string name="str_histories_warning_time">"Time"</string>
+    <string name="str_histories_warning_id">"WarningID"</string>
+    <string name="str_histories_warning_name">"DeviceName"</string>
+    <string name="str_histories_warning_context">"WarningContext"</string>
+    <!--  历史查看dialog  End -->
+    
+    <!-- 设置 dialog Start -->
+    <string name="str_settings_title">"Settings"</string>
+    <string name="str_settings_sound">"Sound"</string>
+    <string name="str_settings_devices">"Devices Settings"</string>
+    <string name="str_settings_add_device">"Add device"</string>
+    <string name="str_settings_del_device">"Delete device"</string>
+    <!-- 设置 dialog End -->
 </resources>

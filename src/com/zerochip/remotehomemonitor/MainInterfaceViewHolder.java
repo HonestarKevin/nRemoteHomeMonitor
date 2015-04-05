@@ -1,17 +1,22 @@
 package com.zerochip.remotehomemonitor;
 
+import java.util.Currency;
+
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.zerochip.util.HistorySQLiteOpenHelper;
 import com.zerochip.util.WorkContext;
 
 /**
  * @Function: 主界面
  * @author xu
- *
+ * 
  */
 public class MainInterfaceViewHolder {
 	public static final boolean DEBUG = RootActivity.DEBUG;
@@ -39,7 +44,8 @@ public class MainInterfaceViewHolder {
 
 	// 用户名 TextView
 	public TextView UsernameTextView = null;
-
+	
+	public int index = 1;
 	public MainInterfaceViewHolder(WorkContext mWorkContext) {
 		super();
 		this.mWorkContext = mWorkContext;
@@ -78,6 +84,7 @@ public class MainInterfaceViewHolder {
 		UsernameTextView = (TextView) mWorkContext.mActivity
 				.findViewById(R.id.tx_main_username);
 	}
+
 	/**
 	 * @function 安全状态被按下；
 	 */
@@ -85,7 +92,7 @@ public class MainInterfaceViewHolder {
 
 		@Override
 		public void run() {
-			
+
 		}
 	};
 	/**
@@ -95,8 +102,10 @@ public class MainInterfaceViewHolder {
 
 		@Override
 		public void run() {
-			//Show Dialog and on click goto call interface
-			new CallDialogInterface(mWorkContext.mContext, R.style.CallDialogInterface, mWorkContext, mWorkContext.mActivity).show();
+			// Show Dialog and on click goto call interface
+			new CallDialogInterface(mWorkContext.mContext,
+					R.style.CallDialogInterface, mWorkContext,
+					mWorkContext.mActivity).show();
 		}
 	};
 	/**
@@ -106,7 +115,8 @@ public class MainInterfaceViewHolder {
 
 		@Override
 		public void run() {
-			//goto Settings Interface
+			// goto Settings Interface
+			new SettingsDialogInterface(mWorkContext.mContext, R.style.HistoriesDialogInterface, mWorkContext).show();
 		}
 	};
 	/**
@@ -116,7 +126,9 @@ public class MainInterfaceViewHolder {
 
 		@Override
 		public void run() {
-			//goto History Interface
+			// goto History Interface
+			new HistoryDialogInterface(mWorkContext.mContext,
+					R.style.HistoriesDialogInterface, mWorkContext).show();
 		}
 	};
 	View.OnClickListener OnClickListener = new View.OnClickListener() {
@@ -126,7 +138,8 @@ public class MainInterfaceViewHolder {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.bt_main_exit:
-				if(DEBUG)Log.e(TAG, "bt_main_exit");
+				if (DEBUG)
+					Log.e(TAG, "bt_main_exit");
 				System.exit(0);
 				break;
 			case R.id.bt_main_safety_staus:
@@ -146,6 +159,7 @@ public class MainInterfaceViewHolder {
 			}
 		}
 	};
+
 	/**
 	 * @function: 给view 增加监听事件
 	 */
@@ -156,6 +170,7 @@ public class MainInterfaceViewHolder {
 		SettingsButton.setOnClickListener(OnClickListener);
 		HistoriesButton.setOnClickListener(OnClickListener);
 	}
+
 	/**
 	 * @function: 给有需要的View增加数据
 	 */
@@ -166,6 +181,7 @@ public class MainInterfaceViewHolder {
 		UsernameTextView.setText(mWorkContext.mResources
 				.getString(R.string.str_user_setup_name)
 				+ mWorkContext.mSharedPreferencesDataHelper.GetLocalUserName());
-		SafetyStatuButton.setText(mWorkContext.mResources.getString(R.string.str_main_safety));
+		SafetyStatuButton.setText(mWorkContext.mResources
+				.getString(R.string.str_main_safety));
 	}
 }

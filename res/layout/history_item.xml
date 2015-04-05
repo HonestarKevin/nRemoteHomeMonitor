@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/vertical_line" />
+
+    <TextView
+        android:id="@+id/tx_histories_dialog_time"
+        android:layout_width="@dimen/d_histories_dialog_time_width"
+        android:layout_height="@dimen/d_histories_dialog_time_height"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/d_welcome_setup_context"
+        android:text="@string/str_histories_warning_time" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/vertical_line" />
+
+    <TextView
+        android:id="@+id/tx_histories_dialog_id"
+        android:layout_width="@dimen/d_histories_dialog_id_width"
+        android:layout_height="@dimen/d_histories_dialog_id_height"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/d_welcome_setup_context" 
+        android:text="@string/str_histories_warning_id" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/vertical_line" />
+
+    <TextView
+        android:id="@+id/tx_histories_dialog_name"
+        android:layout_width="@dimen/d_histories_dialog_name_width"
+        android:layout_height="@dimen/d_histories_dialog_name_height"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/d_welcome_setup_context"
+        android:text="@string/str_histories_warning_name"  />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/vertical_line" />
+
+    <TextView
+        android:id="@+id/tx_histories_dialog_context"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/d_welcome_setup_context" 
+        android:text="@string/str_histories_warning_context" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/vertical_line" />
+
+</LinearLayout>

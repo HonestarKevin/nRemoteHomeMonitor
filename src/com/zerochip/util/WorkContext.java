@@ -25,6 +25,7 @@ public class WorkContext
     public SharedPreferences mPreferences = null;
     public AnimationFactory mAnimationFactory = null;
     public SharedPreferencesDataHelper mSharedPreferencesDataHelper = null;
+    public DatabaseOperater mDatabaseOperater = null;
     //setup wizard 
     public final static String configNeedRunSetupWizardString = "NeedRunSetupWizard";
     public final static String configFileNameString = "RemoteHomeMonitor";

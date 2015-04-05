@@ -3,31 +3,39 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    
+
     <!-- 欢迎页面 Start -->
     <dimen name="d_welcome_setup_title">30dp</dimen>
     <dimen name="d_welcome_setup_context">20dp</dimen>
-	<dimen name="d_welcome_setup_title_setup_context_margin">30dp</dimen>
-	<dimen name="d_welcome_setup_margin_left">10dp</dimen>
-	<dimen name="d_welcome_setup_margin_right">10dp</dimen>
-	
-	<dimen name="d_welcome_setup_context_setup_next_margin">30dp</dimen>
-	<!-- 欢迎页面 End -->
-	<!-- 通用 start -->	
-	<dimen name="d_setup_next_high">30dp</dimen>
-	<dimen name="d_setup_next_width">100dp</dimen>
-	<dimen name="d_setup_margin_top">20dp</dimen>
-	<dimen name="d_setup_margin_left">10dp</dimen>
-	<dimen name="d_setup_margin_right">10dp</dimen>
-	<dimen name="d_setup_edit_width">200dp</dimen>
-	<dimen name="d_setup_edit_high">40dp</dimen>
-	<dimen name="d_setup_button_margin_left">100dp</dimen>
-	<dimen name="d_setup_button_three_margin_left">30dp</dimen>
-	<dimen name="d_main_button_margin">5dp</dimen>
-	<dimen name="d_main_exit_button_width">50dp</dimen>
-	<dimen name="d_main_exit_button_height">50dp</dimen>
-	<dimen name="d_call_contacts_phone_margin">150dp</dimen>
-	<!-- 通用 End -->
-	
-	
+    <dimen name="d_welcome_setup_title_setup_context_margin">30dp</dimen>
+    <dimen name="d_welcome_setup_margin_left">10dp</dimen>
+    <dimen name="d_welcome_setup_margin_right">10dp</dimen>
+    <dimen name="d_welcome_setup_context_setup_next_margin">30dp</dimen>
+    <!-- 欢迎页面 End -->
+    <!-- 通用 start -->
+    <dimen name="d_setup_next_high">30dp</dimen>
+    <dimen name="d_setup_next_width">100dp</dimen>
+    <dimen name="d_setup_margin_top">20dp</dimen>
+    <dimen name="d_setup_margin_left">10dp</dimen>
+    <dimen name="d_setup_margin_right">10dp</dimen>
+    <dimen name="d_setup_edit_width">200dp</dimen>
+    <dimen name="d_setup_edit_high">40dp</dimen>
+    <dimen name="d_setup_button_margin_left">100dp</dimen>
+    <dimen name="d_setup_button_three_margin_left">30dp</dimen>
+    <dimen name="d_main_button_margin">5dp</dimen>
+    <dimen name="d_main_exit_button_width">50dp</dimen>
+    <dimen name="d_main_exit_button_height">50dp</dimen>
+    <dimen name="d_call_contacts_phone_margin">150dp</dimen>
+    <!-- 通用 End -->
+
+
+    <!-- 历史 End -->
+    <dimen name="d_histories_dialog_time_width">50dp</dimen>
+    <dimen name="d_histories_dialog_time_height">30dp</dimen>
+    <dimen name="d_histories_dialog_id_width">80dp</dimen>
+    <dimen name="d_histories_dialog_id_height">30dp</dimen>
+    <dimen name="d_histories_dialog_name_width">80dp</dimen>
+	<dimen name="d_histories_dialog_name_height">30dp</dimen>
+    <!-- 历史 End -->
+
 </resources>

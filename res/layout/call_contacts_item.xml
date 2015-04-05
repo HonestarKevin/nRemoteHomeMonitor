@@ -5,6 +5,13 @@
     android:layout_gravity="center_vertical"
     android:orientation="vertical" >
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/horizontal_line" />
+
     <TextView
         android:id="@+id/tx_call_contacts_name"
         style="@android:style/TextAppearance.WindowTitle"
@@ -15,13 +22,6 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/d_welcome_setup_context" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/horizontal_line" />
-
     <TextView
         android:id="@+id/tx_call_contacts_phone"
         android:layout_width="wrap_content"
@@ -30,5 +30,12 @@
         android:layout_marginLeft="@dimen/d_call_contacts_phone_margin"
         android:textColor="@android:color/black"
         android:textSize="@dimen/d_welcome_setup_context" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/horizontal_line" />
 
 </LinearLayout>
