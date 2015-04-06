@@ -12,6 +12,7 @@ public class SettingsDialogInterface extends Dialog {
 	
 	private WorkContext mWorkContext = null;
 	private Context mContext = null;
+	private SettingsDialogViewHolder mSettingsDialogViewHolder = null;
 	
 	/**
 	 * @Funciton
@@ -31,6 +32,7 @@ public class SettingsDialogInterface extends Dialog {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_settings);
+		mSettingsDialogViewHolder = new SettingsDialogViewHolder(mWorkContext, this);
 	}
 
 }

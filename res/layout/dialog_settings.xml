@@ -21,261 +21,522 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/d_welcome_setup_context" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/bk_focus"
-        android:orientation="vertical" >
-
-        <TextView
-            style="@android:style/TextAppearance.WindowTitle"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:background="@android:color/holo_blue_light"
-            android:text="@string/str_settings_sound"
-            android:textColor="@android:color/white" />
+        android:layout_height="match_parent" >
 
         <LinearLayout
-            android:id="@+id/ll_other_go_home_tone"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@android:style/TextAppearance.WindowTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left"
-                android:text="@string/str_settings_sound"
-                android:textColor="@android:color/white" />
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:clickable="false"
-                android:focusable="false"
-                android:gravity="right" >
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+                android:background="@drawable/bk_focus"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@android:style/TextAppearance.WindowTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@android:color/holo_blue_light"
+                    android:text="@string/str_settings_sound"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/ll_someone_go_home_tone_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_someone_go_home_tone"
+                        android:textSize="@dimen/d_welcome_setup_context"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/right"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/right"
-                    android:clickable="false"
-                    android:focusable="false" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_someone_away_home_tone_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_someone_away_home_tone"
+                        android:textSize="@dimen/d_welcome_setup_context"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/right"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_phone_warning_tone_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_phone_warning_tone"
+                        android:textSize="@dimen/d_welcome_setup_context"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/right"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_phone_warning_time_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_phone_warning_time"
+                        android:textSize="@dimen/d_welcome_setup_context"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/right"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_myself_go_home_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_myself_go_home_tone"
+                        android:textSize="@dimen/d_welcome_setup_context"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/right"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_myself_away_home_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_myself_away_home_tone"
+                        android:textSize="@dimen/d_welcome_setup_context"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/right"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:background="@drawable/horizontal_line" />
-
-        <LinearLayout
-            android:id="@+id/ll_other_away_home_tone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@android:style/TextAppearance.WindowTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left"
-                android:text="@string/str_settings_sound"
-                android:textColor="@android:color/white" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:clickable="false"
-                android:focusable="false"
-                android:gravity="right" >
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+                android:background="@drawable/bk_focus"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@android:style/TextAppearance.WindowTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@android:color/holo_blue_light"
+                    android:text="@string/str_settings_devices"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/ll_add_devices_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_add_device"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/d_welcome_setup_context" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:id="@+id/iv_settings_dialog_add_down"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/down"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/settings_add_device_info" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/right"
-                    android:clickable="false"
-                    android:focusable="false" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_del_devices_settings_dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:background="@drawable/linelayout_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:text="@string/str_settings_del_device"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/d_welcome_setup_context" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <ImageView
+                            android:id="@+id/iv_settings_dialog_del_down"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/down"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/settings_del_device_info" />
             </LinearLayout>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:background="@drawable/horizontal_line" />
-
-        <LinearLayout
-            android:id="@+id/ll_other_warning_tone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@android:style/TextAppearance.WindowTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left"
-                android:text="@string/str_settings_sound"
-                android:textColor="@android:color/white" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+                android:background="@drawable/bk_focus"
                 android:clickable="false"
                 android:focusable="false"
-                android:gravity="right" >
+                android:orientation="vertical" >
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/right"
+                <TextView
+                    style="@android:style/TextAppearance.WindowTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@android:color/holo_blue_light"
+                    android:text="@string/str_settings_system_info"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
                     android:clickable="false"
-                    android:focusable="false" />
+                    android:focusable="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/str_telnet_setup_telnet_name" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <TextView
+                            android:id="@+id/tv_telnet_name_settings_dialog"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/str_main_none" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/str_telnet_setup_telnet_connection_number" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <TextView
+                            android:id="@+id/tv_telnet_connection_number_settings_dialog"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/str_main_none" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/str_admin_register_setup_name" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <TextView
+                            android:id="@+id/tv_admin_register_name_settings_dialog"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/str_main_none" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/str_admin_register_setup_telnumber" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="right" >
+
+                        <TextView
+                            android:id="@+id/tv_admin_register_telnumber_settings_dialog"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/d_welcome_setup_title_setup_context_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/str_main_none" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:background="@drawable/horizontal_line" />
-
-        <LinearLayout
-            android:id="@+id/ll_other_warning_time"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@android:style/TextAppearance.WindowTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left"
-                android:text="@string/str_settings_sound"
-                android:textColor="@android:color/white" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:clickable="false"
-                android:focusable="false"
-                android:gravity="right" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/right"
-                    android:clickable="false"
-                    android:focusable="false" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:background="@drawable/horizontal_line" />
-
-        <LinearLayout
-            android:id="@+id/ll_myself_go_home"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@android:style/TextAppearance.WindowTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left"
-                android:text="@string/str_settings_sound"
-                android:textColor="@android:color/white" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:clickable="false"
-                android:focusable="false"
-                android:gravity="right" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/right"
-                    android:clickable="false"
-                    android:focusable="false" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:background="@drawable/horizontal_line" />
-
-        <LinearLayout
-            android:id="@+id/ll_myself_away_home"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/d_welcome_setup_title_setup_context_margin"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@android:style/TextAppearance.WindowTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left"
-                android:text="@string/str_settings_sound"
-                android:textColor="@android:color/white" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:clickable="false"
-                android:focusable="false"
-                android:gravity="right" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/right"
-                    android:clickable="false"
-                    android:focusable="false" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/bk_focus"
-        android:orientation="vertical" >
-
-        <TextView
-            style="@android:style/TextAppearance.WindowTitle"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:background="@android:color/holo_blue_light"
-            android:text="@string/str_settings_devices"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:layout_width="fill_parent"

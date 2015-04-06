@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 设置远程终端页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/l_telnet_setup"
+    android:id="@+id/ll_settings_dialog_add_devices"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
@@ -9,21 +8,6 @@
     android:orientation="vertical"
     android:visibility="gone" >
 
-    <TextView
-        style="@android:style/TextAppearance.WindowTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
-        android:text="@string/str_telnet_setup_title"
-        android:textSize="@dimen/d_welcome_setup_title"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/horizontal_line" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,13 +17,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/d_setup_margin_top"
             android:orientation="vertical" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_telnet_setup_telnet_name"
+                android:text="@string/str_device_setup_name"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
@@ -47,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_telnet_setup_telnet_connection_number"
+                android:text="@string/str_device_setup_number"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
@@ -56,64 +39,37 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/d_setup_margin_top"
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/e_setup_telnet_name"
+                android:id="@+id/e_settings_add_device_name"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
                 android:inputType="textCapCharacters"
                 android:singleLine="true" />
 
             <EditText
-                android:id="@+id/e_setup_telnet_connectipn_number"
+                android:id="@+id/e_settings_add_device_number"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:inputType="phone"
+                android:inputType="number"
                 android:singleLine="true" />
-
-
         </LinearLayout>
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
-        android:background="@drawable/horizontal_line" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/d_setup_margin_top"
         android:orientation="horizontal" >
 
-
         <Button
-            android:id="@+id/b_telnet_previous"
+            android:id="@+id/b_settings_add_device"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
-            android:layout_gravity="left"
-            android:layout_marginRight="@dimen/d_welcome_setup_margin_left"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:onClick="PreviousButtonOnClick"
-            android:text="@string/str_previous"
-            android:textSize="@dimen/d_welcome_setup_context" />
-
-        <Button
-            android:id="@+id/b_telnet_next"
-            android:layout_width="@dimen/d_setup_next_width"
-            android:layout_height="@dimen/d_setup_next_high"
-            android:layout_gravity="right"
-            android:layout_marginLeft="@dimen/d_setup_button_margin_left"
-            android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
-            android:background="@drawable/button_background"
-            android:gravity="center"
-            android:onClick="NextButtonOnClick"
-            android:text="@string/str_next"
+            android:text="@string/str_device_add"
             android:textSize="@dimen/d_welcome_setup_context" />
     </LinearLayout>
 
