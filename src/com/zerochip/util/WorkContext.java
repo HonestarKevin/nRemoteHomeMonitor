@@ -5,6 +5,7 @@ import com.zerochip.remotehomemonitor.SharedPreferencesDataHelper;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.text.StaticLayout;
@@ -21,6 +22,7 @@ public class WorkContext
     public Activity mActivity = null;
     public Handler mHandler = null;
     public Resources mResources = null;
+    public AssetManager mAssetManager = null; 
     public GetNetWorkState mGetNetWorkState = null;
     public SimpleTextToSpeech mSimpleTextToSpeech = null;
     public SharedPreferences mPreferences = null;
@@ -53,6 +55,7 @@ public class WorkContext
     public final static String LoginUserInputUserName = "LoginUserInputUserName";
     public final static String LoginUserInputUserPasswd = "LoginUserInputUserPasswd";
     //tone
+    public final static String ToneFilePath = "alarms";
     public final static String SomeoneGoHomeToneFile = "SomeoneGoHomeToneFile";
     public final static String SomeoneAwayHomeToneFile = "SomeoneAwayHomeToneFile";
     public final static String PhoneWarningToneFile = "PhoneWarningToneFile";

@@ -44,6 +44,7 @@ public class RootActivity extends Activity {
 		// TODO Auto-generated method stub
 		mWorkContext.mHandler = mHandler;
 		mWorkContext.mResources = getResources();
+		mWorkContext.mAssetManager = getAssets();
 		mWorkContext.mGetNetWorkState = new GetNetWorkState(
 				mWorkContext.mContext);
 		mWorkContext.mSimpleTextToSpeech = new SimpleTextToSpeech(

@@ -28,17 +28,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
         android:text="@string/str_settings_tone_title" />
 
     <ListView
         android:id="@+id/listview_tone_dialog_select_tone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:listSelector="@drawable/list_item_select_background" >
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
     </ListView>
-
+ 	<!-- 用做底部填充 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -2,21 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="@dimen/d_list_item_heigh"
-    android:layout_gravity="center_horizontal"
+    android:minHeight="@dimen/d_list_item_heigh"
+    android:clickable="false"
+    android:focusable="false"
+    android:gravity="left"
     android:orientation="horizontal" >
 
     <TextView
-        android:id="@+id/tx_histories_dialog_time"
-        android:layout_width="@dimen/d_histories_dialog_time_width"
-        android:layout_height="@dimen/d_histories_dialog_time_height"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/str_histories_warning_time"
+        android:id="@+id/textview_dialog_tone_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center_vertical"
         android:textSize="@dimen/d_welcome_setup_context" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="right" >
+
+        <RadioButton
+            android:id="@+id/radiabutton_dialog_tone_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="false"
+            android:focusable="false" />
     </LinearLayout>
 
 </LinearLayout>
