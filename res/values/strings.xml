@@ -114,11 +114,14 @@
     <string name="str_settings_add_device">"Add device"</string>
     <string name="str_settings_del_device">"Delete device"</string>
     <string name="str_settings_system_info">"System Info"</string>
-    <string name="str_settings_someone_go_home_tone">"Someone go Home tone:"</string>
-    <string name="str_settings_someone_away_home_tone">"Someone away Home tone:"</string>
-    <string name="str_settings_phone_warning_tone">"Phone Warning tone:"</string>
-    <string name="str_settings_phone_warning_time">"Warning time:"</string>
-    <string name="str_settings_myself_go_home_tone">"Myself go Home tone:"</string>
-    <string name="str_settings_myself_away_home_tone">"Myself away Home tone:"</string>
+    <string name="str_settings_someone_go_home_tone">"Someone go Home tone"</string>
+    <string name="str_settings_someone_away_home_tone">"Someone away Home tone"</string>
+    <string name="str_settings_phone_warning_tone">"Phone Warning tone"</string>
+    <string name="str_settings_phone_warning_time">"Warning time"</string>
+    <string name="str_settings_myself_go_home_tone">"Myself go Home tone"</string>
+    <string name="str_settings_myself_away_home_tone">"Myself away Home tone"</string>
     <!-- 设置 dialog End -->
+    <!-- 铃声选择 dialog Start -->
+    <string name="str_settings_tone_title">"Tone Select"</string>
+    <!-- 铃声选择 dialog End -->
 </resources>

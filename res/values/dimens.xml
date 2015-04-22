@@ -26,6 +26,7 @@
     <dimen name="d_main_exit_button_width">50dp</dimen>
     <dimen name="d_main_exit_button_height">50dp</dimen>
     <dimen name="d_call_contacts_phone_margin">150dp</dimen>
+    <dimen name="d_list_item_heigh">50dp</dimen>
     <!-- 通用 End -->
 
 

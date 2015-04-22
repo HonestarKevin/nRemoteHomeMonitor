@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/blue_4_4_bg"
+    android:gravity="fill_vertical"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/horizontal_line" />
+
+    <TextView
+        style="@android:style/TextAppearance.WindowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:text="@string/str_settings_tone_title"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/d_welcome_setup_context" />
+
+    <!-- 增加两个按键让用户选择确认 -->
+
+    <TextView
+        android:id="@+id/textview_tone_dialog_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:text="@string/str_settings_tone_title" />
+
+    <ListView
+        android:id="@+id/listview_tone_dialog_select_tone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:listSelector="@drawable/list_item_select_background" >
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/horizontal_line" />
+
+</LinearLayout>

@@ -114,11 +114,15 @@
     <string name="str_settings_add_device">"增加设备"</string>
     <string name="str_settings_del_device">"删除设备"</string>
     <string name="str_settings_system_info">"系统信息"</string>
-    <string name="str_settings_someone_go_home_tone">"有人回家提示音:"</string>
-    <string name="str_settings_someone_away_home_tone">"有人出门提示音:"</string>
-    <string name="str_settings_phone_warning_tone">"手机报警提示音:"</string>
-    <string name="str_settings_phone_warning_time">"手机报警时间:"</string>
-    <string name="str_settings_myself_go_home_tone">"自己回家提示音:"</string>
-    <string name="str_settings_myself_away_home_tone">"自己出门提示音:"</string>
+    <string name="str_settings_someone_go_home_tone">"有人回家提示音"</string>
+    <string name="str_settings_someone_away_home_tone">"有人出门提示音"</string>
+    <string name="str_settings_phone_warning_tone">"手机报警提示音"</string>
+    <string name="str_settings_phone_warning_time">"手机报警时间"</string>
+    <string name="str_settings_myself_go_home_tone">"自己回家提示音"</string>
+    <string name="str_settings_myself_away_home_tone">"自己出门提示音"</string>
     <!-- 设置 dialog End -->
+    
+    <!-- 铃声选择 dialog Start -->
+    <string name="str_settings_tone_title">"Tone Select"</string>
+    <!-- 铃声选择 dialog End -->
 </resources>

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.text.StaticLayout;
+import android.widget.LinearLayout;
 
 /***
  * @category 常用变量
@@ -51,4 +52,21 @@ public class WorkContext
     public final static String LoginUserRememberPasswd = "LoginUserRememberPasswd";
     public final static String LoginUserInputUserName = "LoginUserInputUserName";
     public final static String LoginUserInputUserPasswd = "LoginUserInputUserPasswd";
+    //tone
+    public final static String SomeoneGoHomeToneFile = "SomeoneGoHomeToneFile";
+    public final static String SomeoneAwayHomeToneFile = "SomeoneAwayHomeToneFile";
+    public final static String PhoneWarningToneFile = "PhoneWarningToneFile";
+    public final static String PhoneWarningTimes = "PhoneWarningTimes";
+    public final static String MyselfGoHomeToneToneFile = "MyselfGoHomeToneToneFile";
+    public final static String MyselfAwayHomeToneFile = "MyselfAwayHomeToneFile";
+    public static TONE_TYPE SetToneType = TONE_TYPE.SOME_ONE_GO_HOME;
+
+    public enum TONE_TYPE {
+    	SOME_ONE_GO_HOME,
+    	SOME_ONE_AWAY_HOME,
+    	PHONE_WARNING,
+    	TONE_TIME,
+    	MYSELF_GO_HOME,
+    	MYSELF_AWAY_HOME,
+    }
 }

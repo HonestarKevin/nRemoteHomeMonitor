@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zerochip.util.WorkContext;
+import com.zerochip.util.WorkContext.TONE_TYPE;
 
 public class SettingsDialogViewHolder {
 
@@ -133,18 +134,21 @@ public class SettingsDialogViewHolder {
 		@Override
 		public void run() {
 			String DeviceName = GetAddDevicesName();
-			if(DeviceName == null)
+			if (DeviceName == null)
 				return;
-			String DeviceId   = GetAddDevicesId();
-			if(DeviceId == null)
+			String DeviceId = GetAddDevicesId();
+			if (DeviceId == null)
 				return;
-			if(mWorkContext.mSharedPreferencesDataHelper.AddDevice(DeviceName, DeviceId))
-			ShowToast(mWorkContext.mResources.getString(R.string.str_device_add).toString() +
-					mWorkContext.mResources.getString(R.string.str_device_setup_name).toString() +
-					DeviceName +
-					mWorkContext.mResources.getString(R.string.str_device_setup_number).toString() +
-					DeviceId
-					);
+			if (mWorkContext.mSharedPreferencesDataHelper.AddDevice(DeviceName,
+					DeviceId))
+				ShowToast(mWorkContext.mResources.getString(
+						R.string.str_device_add).toString()
+						+ mWorkContext.mResources.getString(
+								R.string.str_device_setup_name).toString()
+						+ DeviceName
+						+ mWorkContext.mResources.getString(
+								R.string.str_device_setup_number).toString()
+						+ DeviceId);
 		}
 	};
 
@@ -171,7 +175,7 @@ public class SettingsDialogViewHolder {
 			}
 		}
 	};
-	
+
 	public String GetDelDevicesId() {
 		if (DelDevicesId == null) {
 			return null;
@@ -183,8 +187,8 @@ public class SettingsDialogViewHolder {
 			return DelDevicesId.getText().toString();
 		}
 	}
-    public String GetDelDevicesVerifyId()
-    {
+
+	public String GetDelDevicesVerifyId() {
 		if (DelDevicesIdVerify == null) {
 			return null;
 		} else if (DelDevicesIdVerify.getText().toString().equals("")) {
@@ -194,20 +198,24 @@ public class SettingsDialogViewHolder {
 		} else {
 			return DelDevicesIdVerify.getText().toString();
 		}
-    }
-	
+	}
+
 	Runnable DelDeviceButtonOnClickRunnable = new Runnable() {
 
 		@Override
 		public void run() {
 			String DelDeviceId = GetDelDevicesId();
-			if(DelDeviceId == null)  return;
+			if (DelDeviceId == null)
+				return;
 			String DelDeviceIdVerify = GetDelDevicesVerifyId();
-			if(DelDeviceIdVerify == null) return;
-			if(DelDeviceId.equals(DelDeviceIdVerify)){
-				if(mWorkContext.mSharedPreferencesDataHelper.DelDevice(DelDeviceId))
-					ShowToast(mWorkContext.mResources.getString(R.string.str_device_del) + DelDeviceId);
-			}else{
+			if (DelDeviceIdVerify == null)
+				return;
+			if (DelDeviceId.equals(DelDeviceIdVerify)) {
+				if (mWorkContext.mSharedPreferencesDataHelper
+						.DelDevice(DelDeviceId))
+					ShowToast(mWorkContext.mResources
+							.getString(R.string.str_device_del) + DelDeviceId);
+			} else {
 				ShowToast(mWorkContext.mResources
 						.getString(R.string.str_input_sensor_device_number_id_verify_error));
 			}
@@ -222,22 +230,34 @@ public class SettingsDialogViewHolder {
 				Log.e(TAG, "onClick v = " + v + " id = " + v.getId());
 			switch (v.getId()) {
 			case R.id.ll_someone_go_home_tone_settings_dialog:
-
+				new ToneSettingsDialogInterface(mWorkContext.mContext,
+						R.style.HistoriesDialogInterface, mWorkContext,
+						TONE_TYPE.SOME_ONE_GO_HOME).show();
 				break;
 			case R.id.ll_someone_away_home_tone_settings_dialog:
-
+				new ToneSettingsDialogInterface(mWorkContext.mContext,
+						R.style.HistoriesDialogInterface, mWorkContext,
+						TONE_TYPE.SOME_ONE_AWAY_HOME).show();
 				break;
 			case R.id.ll_phone_warning_tone_settings_dialog:
-
+				new ToneSettingsDialogInterface(mWorkContext.mContext,
+						R.style.HistoriesDialogInterface, mWorkContext,
+						TONE_TYPE.PHONE_WARNING).show();
 				break;
 			case R.id.ll_phone_warning_time_settings_dialog:
-
+				new ToneSettingsDialogInterface(mWorkContext.mContext,
+						R.style.HistoriesDialogInterface, mWorkContext,
+						TONE_TYPE.TONE_TIME).show();
 				break;
 			case R.id.ll_myself_go_home_settings_dialog:
-
+				new ToneSettingsDialogInterface(mWorkContext.mContext,
+						R.style.HistoriesDialogInterface, mWorkContext,
+						TONE_TYPE.MYSELF_GO_HOME).show();
 				break;
 			case R.id.ll_myself_away_home_settings_dialog:
-
+				new ToneSettingsDialogInterface(mWorkContext.mContext,
+						R.style.HistoriesDialogInterface, mWorkContext,
+						TONE_TYPE.MYSELF_AWAY_HOME).show();
 				break;
 
 			case R.id.ll_add_devices_settings_dialog:
